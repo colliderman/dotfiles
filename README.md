@@ -9,7 +9,7 @@ to create symbolic links in the correct places.
 
 For example, I want my `.ideavimrc` in my user home dir. So I create a `ideaVim/` directory inside my dotfiles directory and put my `.ideavimrc` inside it.
 
-Then all I need to do is run the following comman and Stow will create the sym link to my `.ideavimrc` file for me.
+Then all I need to do is run the following command and Stow will create the sym link to my `.ideavimrc` file for me.
 
 ```shell
 $ cd ~/.dotfiles
