@@ -1,0 +1,78 @@
+set scrolloff=7
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+" map \e and \r to open ideavimrc and reload
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :source ~/.ideavimrc<CR>
+" nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+" use case-insensitve search by default
+set ignorecase
+" if any of the search characters are uppercase, treat search as
+" case-sensitive
+set smartcase
+" start searching as I type, rather than waiting to submit complete search
+" string
+set incsearch
+" ensure all search results are highlighted
+set hlsearch
+
+" Leader to spacebar
+let mapleader = " "
+
+map <leader>c <action>(CommentByLineComment)
+
+" Open NERDTree (use q to exit)
+map <leader>n :NERDTreeToggle<CR>
+
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fa <action>(SearchEverywhere)
+map <leader><leader> <Action>(RecentFiles)
+
+" Close the active tab
+map <leader>q <action>(CloseContent)
+
+" Quick saving
+map <leader>w <action>(SaveAll)
+
+" Go to code
+nmap <leader>gd <Action>(GotoDeclaration)
+nmap <leader>gy <Action>(GotoTypeDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gu <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap <leader>gb <Action>(Back)
+nmap <leader>gf <Action>(Forward)
+nmap <leader>gh <Action>(opennInSplittedTab)
+
+" Display options
+map <leader>dd <action>(ToggleDistractionFreeMode)
+map <leader>dz <action>(ToggleZenMode)
+map <leader>df <action>(ToggleFullScreen)
+
+" Escape to jk 
+inoremap jk <Esc>
+
+"" Plugin Settings
+"" ==================================================================
+
+set nerdtree
+
+set which-key
+let g:WhichKey_FontSize = 16
+let g:WhichKey_CommandColor = "#41ead4"
+let g:WhichKey_PrefixColor = "#f335b2"
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+
+let g:WhichKeyDesc_leader = "<leader>n Open file explorer"
+
+let g:WhichKeyDesc_comment = "<leader>c Comment line"
+
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
+let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
+let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
